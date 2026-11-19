@@ -71,6 +71,7 @@ export const CorsiRosenthalCalculator: React.FC = () => {
               min="8"
               max="35"
               value={roomLength}
+              aria-label="Room Length in feet"
               onChange={(e) => setRoomLength(Number(e.target.value))}
               className="w-full accent-emerald-500 cursor-pointer"
             />
@@ -86,6 +87,7 @@ export const CorsiRosenthalCalculator: React.FC = () => {
               min="8"
               max="30"
               value={roomWidth}
+              aria-label="Room Width in feet"
               onChange={(e) => setRoomWidth(Number(e.target.value))}
               className="w-full accent-emerald-500 cursor-pointer"
             />
@@ -100,6 +102,7 @@ export const CorsiRosenthalCalculator: React.FC = () => {
               min="8"
               max="14"
               value={ceilingHeight}
+              aria-label="Ceiling Height in feet"
               onChange={(e) => setCeilingHeight(Number(e.target.value))}
               className="w-full accent-emerald-500 cursor-pointer"
             />
@@ -119,7 +122,7 @@ export const CorsiRosenthalCalculator: React.FC = () => {
           </h4>
 
           <div>
-            <label className="text-xs text-slate-300 block mb-2">Number of MERV Filters:</label>
+            <div className="text-xs text-slate-300 block mb-2 font-medium">Number of MERV Filters:</div>
             <div className="grid grid-cols-4 gap-2">
               {[1, 2, 4, 5].map((count) => (
                 <button
@@ -139,7 +142,7 @@ export const CorsiRosenthalCalculator: React.FC = () => {
           </div>
 
           <div>
-            <label className="text-xs text-slate-300 block mb-2">Filter Rating:</label>
+            <div className="text-xs text-slate-300 block mb-2 font-medium">Filter Rating:</div>
             <div className="grid grid-cols-3 gap-2">
               {(['MERV 13', 'MERV 14', 'HEPA H13'] as const).map((rating) => (
                 <button
@@ -172,7 +175,7 @@ export const CorsiRosenthalCalculator: React.FC = () => {
           </h4>
 
           <div>
-            <label className="text-xs text-slate-300 block mb-2">20-inch Box Fan Speed:</label>
+            <div className="text-xs text-slate-300 block mb-2 font-medium">20-inch Box Fan Speed:</div>
             <div className="grid grid-cols-3 gap-2">
               {(['Low', 'Medium', 'High'] as const).map((spd) => (
                 <button

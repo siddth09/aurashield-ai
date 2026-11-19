@@ -303,8 +303,9 @@ export const CommunityHub: React.FC = () => {
             <h3 className="text-lg font-bold text-white mb-3">Report Local Pollution Hotspot</h3>
             <form onSubmit={handleAddReport} className="space-y-4 text-xs">
               <div>
-                <label className="block text-slate-300 mb-1 font-medium">Incident Description</label>
+                <label htmlFor="report-title" className="block text-slate-300 mb-1 font-medium">Incident Description</label>
                 <input
+                  id="report-title"
                   type="text"
                   value={newTitle}
                   onChange={(e) => setNewTitle(e.target.value)}
@@ -315,8 +316,9 @@ export const CommunityHub: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-slate-300 mb-1 font-medium">Location</label>
+                <label htmlFor="report-location" className="block text-slate-300 mb-1 font-medium">Location</label>
                 <input
+                  id="report-location"
                   type="text"
                   value={newLocation}
                   onChange={(e) => setNewLocation(e.target.value)}
@@ -327,8 +329,9 @@ export const CommunityHub: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-slate-300 mb-1 font-medium">Incident Category</label>
+                <label htmlFor="report-type" className="block text-slate-300 mb-1 font-medium">Incident Category</label>
                 <select
+                  id="report-type"
                   value={newType}
                   onChange={(e) => setNewType(e.target.value as CommunityReport['type'])}
                   className="w-full bg-slate-950 border border-slate-700 rounded-lg p-2.5 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"

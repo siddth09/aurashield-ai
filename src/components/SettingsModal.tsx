@@ -82,10 +82,11 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
           </div>
 
           <div>
-            <label className="block text-slate-300 mb-1.5 font-semibold">
+            <label htmlFor="gemini-api-key" className="block text-slate-300 mb-1.5 font-semibold">
               Google Gemini API Key
             </label>
             <input
+              id="gemini-api-key"
               type="password"
               value={apiKey}
               onChange={(e) => setApiKey(e.target.value)}

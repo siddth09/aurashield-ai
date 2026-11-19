@@ -63,8 +63,9 @@ export const HouseholdProfileModal: React.FC<HouseholdProfileModalProps> = ({ is
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-slate-300 mb-1 font-medium">Housing Architecture</label>
+                <label htmlFor="housing-architecture" className="block text-slate-300 mb-1 font-medium">Housing Architecture</label>
                 <select
+                  id="housing-architecture"
                   value={formData.dwellingType}
                   onChange={(e) => setFormData({ ...formData, dwellingType: e.target.value as DwellingType })}
                   className="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 font-medium"
@@ -77,8 +78,9 @@ export const HouseholdProfileModal: React.FC<HouseholdProfileModalProps> = ({ is
               </div>
 
               <div>
-                <label className="block text-slate-300 mb-1 font-medium">Floor Level: {formData.floorLevel}</label>
+                <label htmlFor="floor-level-range" className="block text-slate-300 mb-1 font-medium">Floor Level: {formData.floorLevel}</label>
                 <input
+                  id="floor-level-range"
                   type="range"
                   min="0"
                   max="35"
@@ -91,8 +93,9 @@ export const HouseholdProfileModal: React.FC<HouseholdProfileModalProps> = ({ is
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-              <label className="flex items-center gap-2 text-slate-300 cursor-pointer">
+              <label htmlFor="has-air-purifier" className="flex items-center gap-2 text-slate-300 cursor-pointer">
                 <input
+                  id="has-air-purifier"
                   type="checkbox"
                   checked={formData.hasAirPurifier}
                   onChange={(e) => setFormData({ ...formData, hasAirPurifier: e.target.checked })}
@@ -101,8 +104,9 @@ export const HouseholdProfileModal: React.FC<HouseholdProfileModalProps> = ({ is
                 <span>Air Purifier in Home</span>
               </label>
 
-              <label className="flex items-center gap-2 text-slate-300 cursor-pointer">
+              <label htmlFor="sealed-windows" className="flex items-center gap-2 text-slate-300 cursor-pointer">
                 <input
+                  id="sealed-windows"
                   type="checkbox"
                   checked={formData.sealedWindows}
                   onChange={(e) => setFormData({ ...formData, sealedWindows: e.target.checked })}
@@ -111,8 +115,9 @@ export const HouseholdProfileModal: React.FC<HouseholdProfileModalProps> = ({ is
                 <span>Weather-Sealed Windows</span>
               </label>
 
-              <label className="flex items-center gap-2 text-slate-300 cursor-pointer">
+              <label htmlFor="has-exhaust-fans" className="flex items-center gap-2 text-slate-300 cursor-pointer">
                 <input
+                  id="has-exhaust-fans"
                   type="checkbox"
                   checked={formData.hasExhaustFans}
                   onChange={(e) => setFormData({ ...formData, hasExhaustFans: e.target.checked })}
@@ -134,8 +139,9 @@ export const HouseholdProfileModal: React.FC<HouseholdProfileModalProps> = ({ is
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-1">
-              <label className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 cursor-pointer">
+              <label htmlFor="vuln-toddlers" className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 cursor-pointer">
                 <input
+                  id="vuln-toddlers"
                   type="checkbox"
                   checked={formData.vulnerableMembers.infantsOrToddlers}
                   onChange={(e) => setFormData({
@@ -147,8 +153,9 @@ export const HouseholdProfileModal: React.FC<HouseholdProfileModalProps> = ({ is
                 <span>Infants / Under 5</span>
               </label>
 
-              <label className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 cursor-pointer">
+              <label htmlFor="vuln-elderly" className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 cursor-pointer">
                 <input
+                  id="vuln-elderly"
                   type="checkbox"
                   checked={formData.vulnerableMembers.elderly}
                   onChange={(e) => setFormData({
@@ -160,8 +167,9 @@ export const HouseholdProfileModal: React.FC<HouseholdProfileModalProps> = ({ is
                 <span>Elderly (65+)</span>
               </label>
 
-              <label className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 cursor-pointer">
+              <label htmlFor="vuln-asthma" className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 cursor-pointer">
                 <input
+                  id="vuln-asthma"
                   type="checkbox"
                   checked={formData.vulnerableMembers.asthmaOrRespiratory}
                   onChange={(e) => setFormData({
@@ -173,8 +181,9 @@ export const HouseholdProfileModal: React.FC<HouseholdProfileModalProps> = ({ is
                 <span>Asthma / COPD</span>
               </label>
 
-              <label className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 cursor-pointer">
+              <label htmlFor="vuln-pregnant" className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 cursor-pointer">
                 <input
+                  id="vuln-pregnant"
                   type="checkbox"
                   checked={formData.vulnerableMembers.pregnant}
                   onChange={(e) => setFormData({
@@ -186,8 +195,9 @@ export const HouseholdProfileModal: React.FC<HouseholdProfileModalProps> = ({ is
                 <span>Pregnant</span>
               </label>
 
-              <label className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 cursor-pointer">
+              <label htmlFor="vuln-pets" className="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 cursor-pointer">
                 <input
+                  id="vuln-pets"
                   type="checkbox"
                   checked={formData.vulnerableMembers.pets}
                   onChange={(e) => setFormData({
@@ -210,8 +220,9 @@ export const HouseholdProfileModal: React.FC<HouseholdProfileModalProps> = ({ is
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-slate-300 mb-1 font-medium">Daily Commute Mode</label>
+                <label htmlFor="commute-mode" className="block text-slate-300 mb-1 font-medium">Daily Commute Mode</label>
                 <select
+                  id="commute-mode"
                   value={formData.commuteMode}
                   onChange={(e) => setFormData({ ...formData, commuteMode: e.target.value as CommuteMode })}
                   className="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 font-medium"
@@ -227,10 +238,11 @@ export const HouseholdProfileModal: React.FC<HouseholdProfileModalProps> = ({ is
               </div>
 
               <div>
-                <label className="block text-slate-300 mb-1 font-medium">
+                <label htmlFor="commute-km" className="block text-slate-300 mb-1 font-medium">
                   Roundtrip Commute: {formData.dailyCommuteKm} km/day
                 </label>
                 <input
+                  id="commute-km"
                   type="range"
                   min="0"
                   max="80"
@@ -241,8 +253,9 @@ export const HouseholdProfileModal: React.FC<HouseholdProfileModalProps> = ({ is
               </div>
 
               <div>
-                <label className="block text-slate-300 mb-1 font-medium">Kitchen Cooking Energy</label>
+                <label htmlFor="cooking-fuel" className="block text-slate-300 mb-1 font-medium">Kitchen Cooking Energy</label>
                 <select
+                  id="cooking-fuel"
                   value={formData.cookingEnergy}
                   onChange={(e) => setFormData({ ...formData, cookingEnergy: e.target.value as CookingEnergy })}
                   className="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 font-medium"
@@ -255,8 +268,9 @@ export const HouseholdProfileModal: React.FC<HouseholdProfileModalProps> = ({ is
               </div>
 
               <div>
-                <label className="block text-slate-300 mb-1 font-medium">Winter Space Heating</label>
+                <label htmlFor="heating-fuel" className="block text-slate-300 mb-1 font-medium">Winter Space Heating</label>
                 <select
+                  id="heating-fuel"
                   value={formData.heatingType}
                   onChange={(e) => setFormData({ ...formData, heatingType: e.target.value as HeatingType })}
                   className="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 font-medium"

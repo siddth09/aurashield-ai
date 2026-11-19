@@ -27,6 +27,12 @@ Families—particularly those with **infants, asthmatic children, elderly grandp
 5. **Aura Copilot (GenAI Assistant):** Powered by Google Gemini 2.5 Flash (with an offline medical-grade heuristic fallback) for emergency triage, symptom management, and automated community notice drafting.
 6. **Community Action Hub:** Collective smog watch to report open leaf/trash burning, coordinate carpooling, and manage shared clean air lending libraries.
 
+### 👥 Target Personas & Context-Aware Logic
+* **Persona 1 — The Urban Parent (Ananya, New Delhi):** Family with a 2-year-old toddler in an 8th-floor apartment. Unaware that morning ventilation floods the nursery with 350+ µg/m³ soot. *AuraShield Logic:* Replaces morning airing with 1:30 PM solar convection window, prescribes damp microfiber mopping, and sizes a 450 CFM Corsi-Rosenthal box.
+* **Persona 2 — Vulnerable Senior with COPD (Robert, Salt Lake City):** Trapped under Wasatch Mountain thermal inversions. Accustomed to morning walks in hazardous cold-air pools. *AuraShield Logic:* Triggers emergency threshold warnings, redirects exercise indoors, and quantifies lung soot reduction via the Impact Mirror.
+* **Persona 3 — Daily Two-Wheeler Commuter (Tariq, Lahore):** Inhales direct roadside exhaust during 18 km daily commute. *AuraShield Logic:* Dynamically reschedules commute to 7:00 AM (pre-inversion trap) or electric transit, calculating 4.8 kg CO2 saved and a 62% drop in particulate inhalation.
+* **Persona 4 — Neighborhood Community Leader (Priya, Resident Welfare Association):** Needs to prevent localized emissions. *AuraShield Logic:* Generates official anti-burning circulars and manages the society's Clean Air Lending Library.
+
 ---
 
 ## 🚀 2. System Architecture & Core Logic
