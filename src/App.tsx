@@ -35,10 +35,18 @@ const MainDashboard: React.FC<{
   activeView: string;
   setActiveView: (view: string) => void;
 }> = ({ onOpenProfile, onOpenSettings, activeView, setActiveView }) => {
-  const { aqiData, profile, impactMetrics } = useHousehold();
+  const { aqiData } = useHousehold();
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans">
+      {/* Skip to Main Content Link for Screen Readers (WCAG AAA) */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-emerald-600 focus:text-white focus:rounded-xl focus:shadow-2xl"
+      >
+        Skip to main content
+      </a>
+
       <Navbar
         onOpenProfile={onOpenProfile}
         onOpenSettings={onOpenSettings}
@@ -46,7 +54,7 @@ const MainDashboard: React.FC<{
         setActiveView={setActiveView}
       />
 
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+      <main id="main-content" tabIndex={-1} className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8 focus:outline-none">
         {/* Urgent Emergency Smog Banner when AQI is Severe or Hazardous */}
         {aqiData.aqi >= 250 && (
           <div className="p-4 rounded-2xl bg-gradient-to-r from-rose-950/90 via-slate-900 to-purple-950/90 border border-rose-600/50 shadow-2xl flex flex-col md:flex-row md:items-center justify-between gap-4 animate-fadeIn">

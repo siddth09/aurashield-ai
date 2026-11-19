@@ -24,6 +24,10 @@ describe('AQI Service & Environmental Physics', () => {
     expect(getAQIBadgeShape('Unhealthy')).toContain('Octagon');
     expect(getAQIBadgeShape('Severe')).toContain('Hexagon');
     expect(getAQIBadgeShape('Hazardous')).toContain('Skull');
+
+    // Test getAQIColor returns appropriate Tailwind classes
+    expect(getAQIColor('Good')).toContain('emerald');
+    expect(getAQIColor('Hazardous')).toContain('rose');
   });
 
   it('generates high-fidelity fallback profile with diurnal inversion curves', () => {

@@ -66,7 +66,6 @@ export async function fetchLiveAQI(lat: number, lon: number, cityName?: string):
     // Take 24 hours from now
     for (let i = 0; i < 24; i++) {
       const idx = (currentHourIndex + i) % (hourlyTimes.length || 24);
-      const timeStr = hourlyTimes[idx] || `${(now.getHours() + i) % 24}:00`;
       const hour = (now.getHours() + i) % 24;
       const pmVal = hourlyPM25[idx] ? Math.round(hourlyPM25[idx]) : Math.round(currentPM2_5 * getDiurnalMultiplier(hour));
       const aqiVal = hourlyAQI[idx] ? Math.round(hourlyAQI[idx]) : Math.round(pmVal * 1.8);

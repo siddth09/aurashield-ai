@@ -79,7 +79,8 @@ export function calculateDirectImpact(
     : 0;
 
   // Health risk score (0 to 100, where 100 is best protected)
-  let healthScore = 30; // baseline under winter smog
+  const smogSeverityPenalty = ambientAQI > 350 ? 15 : ambientAQI > 200 ? 10 : 0;
+  let healthScore = Math.max(15, 35 - smogSeverityPenalty);
   healthScore += Math.min(35, activeHacksCount * 7);
   healthScore += Math.min(25, activeSustainableCount * 5);
   if (profile.vulnerableMembers.infantsOrToddlers || profile.vulnerableMembers.asthmaOrRespiratory) {

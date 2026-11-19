@@ -4,16 +4,11 @@ import { CommunityReport } from '../types';
 import { generateCommunityNoticeText } from '../services/geminiService';
 import { 
   Users, 
-  AlertTriangle, 
-  FileText, 
   Copy, 
   Check, 
   MapPin, 
   ThumbsUp, 
   PlusCircle, 
-  Flame, 
-  Truck, 
-  Building,
   ShieldCheck 
 } from 'lucide-react';
 
@@ -176,7 +171,6 @@ export const CommunityHub: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {reports.map(rep => {
               const isBurning = rep.type === 'waste_burning';
-              const isGen = rep.type === 'generator_smoke';
               const isSanctuary = rep.type === 'clean_air_space_available';
 
               return (

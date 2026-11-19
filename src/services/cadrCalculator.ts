@@ -66,11 +66,12 @@ export function calculateCADR(
   };
 }
 
-export function getDIYCostComparison(roomVolumeCuFt: number) {
-  const diyInitial = 55; // $20 box fan + $35 (4x MERV 13 filters)
-  const diyAnnualFilter = 32; // 4x filters replaced every 6 months in heavy winter smog
-  const commercialInitial = 380; // Reputable 300+ CADR HEPA purifier
-  const commercialAnnualFilter = 95; // Proprietary OEM cylindrical HEPA cartridge
+export function getDIYCostComparison(roomVolumeCuFt: number = 1600) {
+  const unitsNeeded = Math.max(1, Math.ceil(roomVolumeCuFt / 3000));
+  const diyInitial = 55 * unitsNeeded; // $20 box fan + $35 (4x MERV 13 filters)
+  const diyAnnualFilter = 32 * unitsNeeded; // 4x filters replaced every 6 months in heavy winter smog
+  const commercialInitial = 380 * unitsNeeded; // Reputable 300+ CADR HEPA purifier
+  const commercialAnnualFilter = 95 * unitsNeeded; // Proprietary OEM cylindrical HEPA cartridge
 
   const fiveYearDIY = diyInitial + (diyAnnualFilter * 5);
   const fiveYearCommercial = commercialInitial + (commercialAnnualFilter * 5);

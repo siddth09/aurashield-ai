@@ -9,12 +9,11 @@ import {
   TrendingUp, 
   HeartPulse, 
   Trees, 
-  Sparkles,
   Info
 } from 'lucide-react';
 
 export const ImpactMirror: React.FC = () => {
-  const { impactMetrics, profile, aqiData } = useHousehold();
+  const { impactMetrics, profile } = useHousehold();
   const monthly = getMonthlyProjection(impactMetrics);
 
   return (

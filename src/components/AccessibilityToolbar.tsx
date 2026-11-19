@@ -5,8 +5,6 @@ import {
   Contrast, 
   Type, 
   Volume2, 
-  Check, 
-  HelpCircle,
   X
 } from 'lucide-react';
 

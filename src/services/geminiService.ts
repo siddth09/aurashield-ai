@@ -1,4 +1,4 @@
-import { AQIData, HouseholdProfile, RoutineItem } from '../types';
+import { AQIData, HouseholdProfile } from '../types';
 
 export interface GeminiResponse {
   text: string;

@@ -3,14 +3,10 @@ import { useHousehold } from '../context/HouseholdContext';
 import { IAQ_HACKS } from '../data/iaqHacks';
 import { CorsiRosenthalCalculator } from './CorsiRosenthalCalculator';
 import { 
-  Sparkles, 
   Check, 
   Plus, 
-  HelpCircle, 
   Wrench, 
-  DollarSign, 
   ShieldCheck, 
-  BookOpen, 
   ChevronDown, 
   ChevronUp 
 } from 'lucide-react';

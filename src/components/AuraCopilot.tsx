@@ -7,9 +7,6 @@ import {
   User, 
   Send, 
   Sparkles, 
-  AlertTriangle, 
-  Flame, 
-  HelpCircle, 
   ShieldAlert, 
   RotateCcw,
   Zap

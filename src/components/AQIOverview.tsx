@@ -6,11 +6,10 @@ import {
   Wind, 
   Droplets, 
   Thermometer, 
-  AlertOctagon, 
   Clock, 
   ShieldAlert, 
-  RotateCw,
-  Flame
+  RotateCw, 
+  Flame 
 } from 'lucide-react';
 import { PRESET_CITIES } from '../data/presetCities';
 

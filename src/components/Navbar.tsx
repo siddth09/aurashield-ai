@@ -2,16 +2,12 @@ import React, { useState } from 'react';
 import { useHousehold } from '../context/HouseholdContext';
 import { useAccessibility } from '../context/AccessibilityContext';
 import { AQIBadge } from './AQIBadge';
-import { PRESET_CITIES } from '../data/presetCities';
 import { 
-  ShieldAlert, 
-  MapPin, 
   Settings, 
   User, 
   Navigation, 
   Contrast, 
   Leaf, 
-  Sparkles,
   Bot
 } from 'lucide-react';
 
@@ -28,7 +24,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   activeView,
   setActiveView,
 }) => {
-  const { aqiData, selectedCityId, selectCityById, setCustomCoordinates } = useHousehold();
+  const { aqiData, setCustomCoordinates } = useHousehold();
   const { highContrast, toggleHighContrast } = useAccessibility();
   const [isLocating, setIsLocating] = useState(false);
 

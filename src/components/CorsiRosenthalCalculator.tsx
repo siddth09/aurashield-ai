@@ -3,12 +3,8 @@ import { calculateCADR, getDIYCostComparison } from '../services/cadrCalculator'
 import { 
   Fan, 
   Wind, 
-  ShieldCheck, 
   Volume2, 
-  DollarSign, 
   Layers, 
-  CheckCircle, 
-  HelpCircle,
   Scissors
 } from 'lucide-react';
 

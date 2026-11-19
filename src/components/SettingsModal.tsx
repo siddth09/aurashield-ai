@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
-import { getActiveApiKey, hasActiveApiKey } from '../services/geminiService';
+import { hasActiveApiKey } from '../services/geminiService';
 import { 
   X, 
   Key, 
   ExternalLink, 
   Check, 
-  ShieldCheck, 
-  Bot, 
-  Cpu, 
-  Zap,
-  Info
+  ShieldCheck 
 } from 'lucide-react';
 
 interface SettingsModalProps {

@@ -5,12 +5,8 @@ import {
   Home, 
   Users, 
   Car, 
-  Flame, 
-  Wind, 
   Save, 
-  CheckCircle2, 
-  Baby, 
-  ShieldAlert 
+  CheckCircle2 
 } from 'lucide-react';
 import { CommuteMode, CookingEnergy, DwellingType, HeatingType } from '../types';
 
