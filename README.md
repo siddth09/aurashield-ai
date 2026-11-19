@@ -6,8 +6,8 @@
 [![Live Tests](https://img.shields.io/badge/Vitest-8%20Passed-emerald.svg)](https://vitest.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue.svg)](https://www.typescriptlang.org/)
 [![WCAG](https://img.shields.io/badge/Accessibility-WCAG%20AAA-purple.svg)](https://www.w3.org/WAI/standards-guidelines/wcag/)
-[![Bundle Size](https://img.shields.io/badge/Repo%20Size-%3C%20200%20KB-success.svg)](https://github.com)
-[![License](https://img.shields.io/badge/License-MIT-teal.svg)](LICENSE)
+[![Bundle Size](https://img.shields.io/badge/Repo%20Size-%3C%20250%20KB-success.svg)](https://github.com/siddth09/aurashield-ai)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsiddth09%2Faurashield-ai)
 
 ---
 
@@ -166,7 +166,7 @@ npm test
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/<your-username>/aurashield-ai.git
+git clone https://github.com/siddth09/aurashield-ai.git
 cd aurashield-ai
 
 # 2. Install dependencies
@@ -194,7 +194,7 @@ Copy and paste these exact, polished responses into your hackathon submission po
 
 ### 1. Public GitHub Repository Link
 ```
-https://github.com/<your-username>/aurashield-ai
+https://github.com/siddth09/aurashield-ai
 ```
 *(Ensure the repo is set to Public and contains only the `main` branch)*
 
@@ -251,7 +251,7 @@ With AuraShield AI, we built:
 Built with React, TypeScript, Tailwind CSS, Open-Meteo, and Google Gemini.
 
 Check out the code & try it out:
-GitHub: https://github.com/<your-username>/aurashield-ai
+GitHub: https://github.com/siddth09/aurashield-ai
 
 #GenAI #Hackathon #AirQuality #CleanAir #GeminiAPI #React #TypeScript #Sustainability #ClimateTech #OpenSource
 ```
