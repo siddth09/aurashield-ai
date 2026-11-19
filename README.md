@@ -211,26 +211,26 @@ https://youtu.be/<your-unlisted-video-id>
 *(Upload your 2-3 minute video walkthrough as Unlisted on YouTube or Google Drive with public view access)*
 
 ### 4. Describe the changes/updates made in the deployed version (Limit: 1024 chars)
-```
+```text
 AuraShield AI is an urban smog and air quality assistant for families navigating severe winter inversions. Key deployed features include:
-1. Real-time Smog Telemetry & Diurnal Chart: Global live Open-Meteo AQI with a 24-hour boundary layer timeline highlighting the 1:30-3:00 PM solar ventilation window vs morning/night inversion traps.
-2. Corsi-Rosenthal DIY Sizer: An interactive engineering calculator that sizes Clean Air Delivery Rate (CADR) and Air Changes per Hour (ACH) for any room volume, comparing 5-year costs against commercial HEPA.
-3. Adaptive Low-Emission Routines: Dynamic timeline swapping high-emission habits for low-exposure alternatives (commute shifts, induction cooking, wet mopping) with direct impact tracking.
-4. The Impact Mirror: Quantified health engine calculating PM2.5 lung exposure prevented, Berkeley Earth cigarette equivalence, and community CO2e saved.
-5. Aura Copilot (Gemini 2.5 Flash) with emergency symptom triage and community circular generation.
+1. Real-time Smog Telemetry & Diurnal Chart: Global live Open-Meteo AQI with 24h boundary layer curves highlighting the 1:30-3:00 PM solar ventilation window vs morning/night traps.
+2. Corsi-Rosenthal DIY Sizer: Engineering calculator sizing Clean Air Delivery Rate (CADR) and Air Changes/Hour (ACH) for room volumes, showing 80% savings vs commercial HEPA.
+3. Adaptive Low-Emission Routines: Dynamic schedule swapping high-pollution habits for low-exposure alternatives (commute shifts, induction cooking, wet mopping) with direct impact tracking.
+4. The Impact Mirror: Quantified engine calculating PM2.5 lung exposure prevented, Berkeley Earth cigarette equivalence, and community CO2e saved.
+5. Aura Copilot (Gemini 2.5 Flash): Emergency symptom triage and automated community circular generation.
 6. Full WCAG AAA high contrast and colorblind-safe shape tokens.
 ```
-*(Exact length: 989 characters)*
+*(Exact length: 1004 characters)*
 
 ### 5. Mention the Gen AI services utilized in the submission, and where did you utilize it? (Limit: 1024 chars)
-```
+```text
 We utilized Google Gemini 2.5 Flash via REST endpoints across 4 distinct modules in AuraShield AI:
-1. Aura Copilot (Conversational Smog & IAQ Assistant): Provides context-aware answers to user queries regarding room sealing, filter physics, and respiratory symptom management, using real-time atmospheric inputs (ambient AQI, inversion risk, and family vulnerability profiles).
-2. Emergency Smog Triage: Dynamically evaluates pediatric and elderly respiratory flare-ups (cough, wheezing), prescribing non-medical environmental isolation protocols (clean sanctuary room, damp-towel draft seals, N95 fitting) with clinical disclaimers.
-3. Climate-Adaptive Daily Routine Synthesis: Dynamically analyzes hourly diurnal PM2.5 forecasts to suggest pre-emptive schedule adjustments (e.g. shifting departures to 7:00 AM to avoid the 8:00 AM inversion trap).
-4. Community Action Notice Generator: Automatically formats official RWA and school circulars (anti-burning advisories, clean air lending libraries) tailored to current local smog severity.
+1. Aura Copilot (Conversational Smog & IAQ Assistant): Provides context-aware answers on room sealing, filter physics, and symptom management using live atmospheric telemetry (ambient AQI, inversion risk, and family vulnerability profiles).
+2. Emergency Smog Triage: Evaluates pediatric and elderly respiratory flare-ups (cough, wheezing), prescribing environmental isolation protocols (clean sanctuary room, damp-towel door seals, N95 fitting) with medical disclaimers.
+3. Climate-Adaptive Routine Synthesis: Analyzes diurnal PM2.5 forecasts to suggest pre-emptive schedule adjustments (e.g. departing at 7:00 AM to avoid the 8:00 AM inversion trap).
+4. Community Action Notice Generator: Automatically formats official RWA and school circulars (anti-burning advisories, clean air lending libraries) tailored to local smog severity.
 ```
-*(Exact length: 996 characters)*
+*(Exact length: 932 characters)*
 
 ### 6. LinkedIn Post Draft
 ```text
