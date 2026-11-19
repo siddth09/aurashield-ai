@@ -1,29 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import { HouseholdProvider, useHousehold } from './context/HouseholdContext';
 import { AccessibilityProvider } from './context/AccessibilityContext';
+import { ErrorBoundary } from './components/ErrorBoundary';
 import { Navbar } from './components/Navbar';
 import { AQIOverview } from './components/AQIOverview';
 import { DiurnalChart } from './components/DiurnalChart';
 import { RoutinePlanner } from './components/RoutinePlanner';
-import { IAQLab } from './components/IAQLab';
 import { ImpactMirror } from './components/ImpactMirror';
-import { AuraCopilot } from './components/AuraCopilot';
-import { CommunityHub } from './components/CommunityHub';
 import { HouseholdProfileModal } from './components/HouseholdProfileModal';
 import { SettingsModal } from './components/SettingsModal';
 import { AccessibilityToolbar } from './components/AccessibilityToolbar';
 import { 
-  Sparkles, 
   ShieldAlert, 
   Bot, 
-  Leaf, 
-  Award, 
-  CheckCircle2, 
-  Flame, 
-  Wind,
-  Layers,
-  HeartHandshake
+  Leaf
 } from 'lucide-react';
+
+/** Lazy-loaded heavy components for code-splitting & efficiency */
+const IAQLab = lazy(() => import('./components/IAQLab').then(m => ({ default: m.IAQLab })));
+const AuraCopilot = lazy(() => import('./components/AuraCopilot').then(m => ({ default: m.AuraCopilot })));
+const CommunityHub = lazy(() => import('./components/CommunityHub').then(m => ({ default: m.CommunityHub })));
+
+/** Loading spinner shown while lazy components are loading */
+const LazyFallback = () => (
+  <div className="flex items-center justify-center py-20" role="status" aria-label="Loading section">
+    <div className="w-8 h-8 border-4 border-emerald-500/30 border-t-emerald-500 rounded-full animate-spin" />
+    <span className="sr-only">Loading...</span>
+  </div>
+);
 
 const MainDashboard: React.FC<{
   onOpenProfile: () => void;
@@ -82,51 +86,53 @@ const MainDashboard: React.FC<{
         )}
 
         {/* View Switcher Router */}
-        {activeView === 'overview' && (
-          <div className="space-y-8 animate-fadeIn">
-            <AQIOverview />
-            <DiurnalChart hourly={aqiData.hourly} />
+        <Suspense fallback={<LazyFallback />}>
+          {activeView === 'overview' && (
+            <div className="space-y-8 animate-fadeIn">
+              <AQIOverview />
+              <DiurnalChart hourly={aqiData.hourly} />
 
-            {/* Quick Two-Column Spotlight */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <RoutinePlanner />
-              <div className="space-y-8">
-                <ImpactMirror />
-                <AuraCopilot />
+              {/* Quick Two-Column Spotlight */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <RoutinePlanner />
+                <div className="space-y-8">
+                  <ImpactMirror />
+                  <AuraCopilot />
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {activeView === 'routines' && (
-          <div className="animate-fadeIn">
-            <RoutinePlanner />
-          </div>
-        )}
+          {activeView === 'routines' && (
+            <div className="animate-fadeIn">
+              <RoutinePlanner />
+            </div>
+          )}
 
-        {activeView === 'iaq' && (
-          <div className="animate-fadeIn">
-            <IAQLab />
-          </div>
-        )}
+          {activeView === 'iaq' && (
+            <div className="animate-fadeIn">
+              <IAQLab />
+            </div>
+          )}
 
-        {activeView === 'impact' && (
-          <div className="animate-fadeIn">
-            <ImpactMirror />
-          </div>
-        )}
+          {activeView === 'impact' && (
+            <div className="animate-fadeIn">
+              <ImpactMirror />
+            </div>
+          )}
 
-        {activeView === 'copilot' && (
-          <div className="animate-fadeIn max-w-4xl mx-auto">
-            <AuraCopilot />
-          </div>
-        )}
+          {activeView === 'copilot' && (
+            <div className="animate-fadeIn max-w-4xl mx-auto">
+              <AuraCopilot />
+            </div>
+          )}
 
-        {activeView === 'community' && (
-          <div className="animate-fadeIn">
-            <CommunityHub />
-          </div>
-        )}
+          {activeView === 'community' && (
+            <div className="animate-fadeIn">
+              <CommunityHub />
+            </div>
+          )}
+        </Suspense>
       </main>
 
       {/* Accessibility Toolbar Floating Control */}
@@ -164,24 +170,26 @@ export function App() {
   const [activeView, setActiveView] = useState('overview');
 
   return (
-    <AccessibilityProvider>
-      <HouseholdProvider>
-        <MainDashboard
-          onOpenProfile={() => setIsProfileOpen(true)}
-          onOpenSettings={() => setIsSettingsOpen(true)}
-          activeView={activeView}
-          setActiveView={setActiveView}
-        />
-        <HouseholdProfileModal
-          isOpen={isProfileOpen}
-          onClose={() => setIsProfileOpen(false)}
-        />
-        <SettingsModal
-          isOpen={isSettingsOpen}
-          onClose={() => setIsSettingsOpen(false)}
-        />
-      </HouseholdProvider>
-    </AccessibilityProvider>
+    <ErrorBoundary>
+      <AccessibilityProvider>
+        <HouseholdProvider>
+          <MainDashboard
+            onOpenProfile={() => setIsProfileOpen(true)}
+            onOpenSettings={() => setIsSettingsOpen(true)}
+            activeView={activeView}
+            setActiveView={setActiveView}
+          />
+          <HouseholdProfileModal
+            isOpen={isProfileOpen}
+            onClose={() => setIsProfileOpen(false)}
+          />
+          <SettingsModal
+            isOpen={isSettingsOpen}
+            onClose={() => setIsSettingsOpen(false)}
+          />
+        </HouseholdProvider>
+      </AccessibilityProvider>
+    </ErrorBoundary>
   );
 }
 
