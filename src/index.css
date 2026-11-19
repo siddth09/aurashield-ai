@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+/* Accessibility: Text Scaling */
+html.text-large {
+  font-size: 115%;
+}
+
+html.text-xlarge {
+  font-size: 130%;
+}
+
+/* Accessibility: High Contrast Mode (WCAG AAA) */
+html.high-contrast {
+  filter: contrast(125%);
+}
+
+html.high-contrast body {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+html.high-contrast .bg-slate-900,
+html.high-contrast .bg-slate-950,
+html.high-contrast .bg-slate-800 {
+  background-color: #050505 !important;
+  border-color: #FFFFFF !important;
+}
+
+html.high-contrast text,
+html.high-contrast span,
+html.high-contrast p,
+html.high-contrast h1,
+html.high-contrast h2,
+html.high-contrast h3,
+html.high-contrast h4 {
+  color: #FFFFFF !important;
+}
+
+html.high-contrast button {
+  border: 2px solid #FFFFFF !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
