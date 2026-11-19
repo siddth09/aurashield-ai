@@ -32,8 +32,7 @@ dist-ssr
 # Test coverage
 coverage
 
-# Demo video assets (Video is hosted externally on YouTube/Drive to keep repo < 10 MB)
+# Demo video binary assets (MP4 is hosted on YouTube/Drive to keep git repo < 10 MB)
 demo_video/
 *.mp4
 *.aiff
-generate_demo_video.py
